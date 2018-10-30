@@ -1,10 +1,10 @@
-{% extends "base.html.j2" -%}
+{% extends "base.html.j2" %}
 
-{% block content -%}
+{% block content %}
     <h1>Hello, {{ current_user.username }}!</h1>
     <ul>
-        {%- for post in posts %}
+        {% for post in posts %}
         <li>{{ post.author.username }} says: <b>{{ post.body }}</b></li>
-        {%- endfor %}
+        {% endfor %}
     </ul>
-{%- endblock %}
+{% endblock %}
