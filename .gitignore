@@ -1,5 +1,6 @@
 .idea/
 image/
+logs/
 *pycache*
 *.db
 
