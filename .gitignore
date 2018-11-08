@@ -3,4 +3,4 @@ image/
 logs/
 *pycache*
 *.db
-
+*.pyc
