@@ -15,9 +15,17 @@
         <p>{{ form.submit() }}</p>
     </form>
     {% endif %}
-    <ul>
+    <table>
         {% for post in posts %}
-            {% include '_post.html' %}
+            {% include '_post.html.j2' %}
         {% endfor %}
-    </ul>
+    </table>  
+    <p>
+    {% if prev_url %}
+        <a href="{{ prev_url }}">Newer posts</a>
+    {% endif %}
+    {% if next_url %}
+        <a href="{{ next_url }}">Older posts</a>
+    {% endif %}
+    </p>
 {% endblock %}
