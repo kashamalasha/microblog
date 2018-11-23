@@ -1,11 +1,9 @@
 {% extends "base.html.j2" %}
 
-{% block content %}
-    <table>
-        <tr valign="top">
-            <td>
-                <img src="{{ user.avatar(128) }}">
-            </td>
+{% block app_content %}
+    <table class="table table-hover">
+        <tr>
+            <td width="256px"><img src="{{ user.avatar(256) }}"></td>
             <td>
                 <h1>User: {{ user.username }}</h1>
                 {% if user.about_me %}
@@ -25,18 +23,11 @@
     {% else %}
         <p><a href="{{ url_for('unfollow', username=user.username) }}">Unfollow</a></p>
     {% endif %}
-    <hr>
-    <table>
-    {% for post in posts %}
-        {% include '_post.html.j2' %}
-    {% endfor %}
-    </table>
-    <p>
-    {% if prev_url %}
-        <a href="{{ prev_url }}">Newer posts</a>
-    {% endif %}
-    {% if next_url %}
-        <a href="{{ next_url }}">Older posts</a>
-    {% endif %}
-    </p>
+    {% include "_pager.html.j2" %}
+    <table class="table table-hover">
+        {% for post in posts %}
+            {% include "_post.html.j2" %}
+        {% endfor %}
+    </table>  
+    {% include '_pager.html.j2' %}
 {% endblock %}

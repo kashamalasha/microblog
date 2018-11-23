@@ -18,4 +18,4 @@ class Config(object):
     MAIL_USERNAME = 'dmitry.burnyshev'
     MAIL_PASSWORD = 'Igmlcm!!again'
     ADMINS = ['dmitry.burnyshev@gmail.com']
-    POSTS_PER_PAGE = 20
+    POSTS_PER_PAGE = 5
